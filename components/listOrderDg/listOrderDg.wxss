@@ -1,5 +1,2 @@
 /* components/listOrderDg/listOrderDg.wxss */
-@import "../../pages/listOrders/listOrders.wxss";
-.submit-wrapper{
-  text-align: center;
-}
+@import "../../pages/listOrders/listOrders.wxss"

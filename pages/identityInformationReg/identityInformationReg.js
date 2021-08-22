@@ -8,12 +8,10 @@ Page({
    */
   data: {
     kind: '', //注册类型
-    name:"",//姓名
-    nauserId:"",//身份证号
     mobile: '', //手机号
     newPassword: '', //密码
     newPasswordQ: '', //再次输入密码
-    // code: '', //验证码
+    code: '', //验证码
     codename: '发送验证码',
   },
 
@@ -92,25 +90,22 @@ Page({
         title: '请再次输入密码',
         icon: 'none',
       })
+    } else if (this.data.code === '') {
+      wx.showToast({
+        title: '请输入验证码',
+        icon: 'none',
+      })
     } else if (this.data.newPasswordQ !== this.data.newPassword) {
       wx.showToast({
         title: '两次输入的密码不一致,请重新输入',
         icon: 'none'
       })
-    } 
-    // else if (!app.util.passworderTest(this.data.newPassword)) {
-    //   return false
-    // } 
-    else {
+    } else if (!app.util.passworderTest(this.data.newPassword)) {
+      return false
+    } else {
       wx.showLoading({
         title: '提交中',
       })
-      setTimeout(()=>{
-        wx.reLaunch({
-          url: '/pages/index/index?login=2',
-        })
-      },2000)
-      return
       // 验证验证码是否正确
       app.reqFetch.log.checkVerifyCode(this.data.mobile.toString(), this.data.code).then(res => {
         wx.hideLoading()

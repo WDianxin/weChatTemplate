@@ -10,7 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperDataArr: [], //首页顶部轮播图
+    swiperDataArr: [{bannerPic:'https://img1.baidu.com/it/u=8370503,1640082050&fm=26&fmt=auto&gp=0.jpg',id:1,activityUrl:"https://www.baidu.com/"},{bannerPic:'https://img1.baidu.com/it/u=8370503,1640082050&fm=26&fmt=auto&gp=0.jpg',id:2,activityUrl:'https://www.baidu.com/'}], //首页顶部轮播图
     countNum: 6,
     timeInterval: "",
     scrollTop: 5, // 设定触发条件的距离
@@ -30,24 +30,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.showLoading({
-    //   title: '加载中',
-    //   mask: true
-    // })
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
     if (!options.login) { //非登录页进入
-      // this.wxLogin()
+      this.wxLogin()
     }
     //在token失效之前更新tokem(token有效期为12小时,在11小时时更新token)
-    // app.globalData.restTokenInteral = setInterval(function () {
-    //   this.wxLogin(true)
-    // }, 39600000)
+    app.globalData.restTokenInteral = setInterval(function () {
+      this.wxLogin(true)
+    }, 39600000)
   },
   onShow() {
-    // if (app.auth.getToken()) {
-    //   this.onLoadRequst()
-    // } else {
-    //   this.wxLogin()
-    // }
+    if (app.auth.getToken()) {
+      this.onLoadRequst()
+    } else {
+      this.wxLogin()
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -93,11 +93,6 @@ Page({
         this.onPulling()
       }, 350)
     }
-  },
-  toPage(e){
-    wx.navigateTo({
-      url: '/pages/queryList/queryList',
-    })
   },
 
 
@@ -210,6 +205,7 @@ Page({
   },
   //首页顶部轮播图获取
   selectBannerPic() {
+    return
     app.reqFetch.index.selectBannerPic().then(res => {
       if (res.data.code === 1) {
         // activityUrl:代表跳转外联地址

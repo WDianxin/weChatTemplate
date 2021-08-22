@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "navBar": "/components/navbar/navbar",
-    "regionBut": "/components/region/region"
-  }
-}

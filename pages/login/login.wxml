@@ -1,15 +1,15 @@
 <!--pages/login/login.wxml登录页-->
-<!-- <navBar navigationBarTitle='登录'></navBar> -->
+<navBar navigationBarTitle='登录'></navBar>
 <view class="container loginBox">
   <view class='header-wrapper'>
-    <view class='logo_txt'>登  录</view>
+    <view class='logo_txt'>账号密码登录</view>
   </view>
   <view class="content">
     <view class='content-wrapper'>
       <view class='phone-box'>
         <van-icon name="../../image/fonts/iconyonghu.png" size="50rpx" class='iconfont iconziyuanxhdpi icon-color' />
         <view class='phone-wrapper'>
-          <input placeholder='请输入账号' cursor-spacing="160" value='{{account}}' class='phone-text'
+          <input placeholder='请输入手机号或工号' cursor-spacing="160" value='{{account}}' class='phone-text'
             placeholder-class='phone-placeholder' bindinput='handleInput'></input>
         </view>
       </view>

@@ -21,17 +21,7 @@ Component({
   data: {
     pHeight: wx.getSystemInfoSync().windowHeight-180 + 'px',
 
-    listArr: [
-      {
-        ksmc:"消防安全考试",  
-        kssj:"2021-8-20 08:00",
-        ksdd:"消防安全青岛市市北区同安路10号",
-        xxmc:"青岛市警官培训学校",
-        kszh:"1栋2楼202室5号",
-        kszsj:"90分钟",
-        ksjg:"通过"
-      }
-    ], //待服务订单
+    listArr0: [], //待服务订单
     pageNum: 1, //待服务订单当前页码
     scrollTop: '0px',
   },

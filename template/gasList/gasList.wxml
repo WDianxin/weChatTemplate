@@ -2,20 +2,12 @@
 <template name="gasList">
   <view class="listRow">
     <view class="orderNum">
-      <van-icon wx:if="{{1 === 1}}" name="../../image/fonts/fuWuBing.png" size="20px" />
-      <van-icon wx:if="{{1 === 2}}" name="../../image/sanYiNiao.png" size="20px" />
-      <text class="label">考试名称:</text>
-      <text class="num">{{items.ksmc}}</text>
+      <van-icon wx:if="{{items.source === 1}}" name="../../image/fonts/fuWuBing.png" size="20px" />
+      <van-icon wx:if="{{items.source === 2}}" name="../../image/sanYiNiao.png" size="20px" />
+      <text class="label">订单号:</text>
+      <text class="num">{{items.orderNum}}</text>
     </view>
-
-    <!-- ksmc:"消防安全基础知识考试",
-          kssj:"2021-8-20 08:00",
-          ksdd:"消防安全青岛市市北区同安路10号",
-          xxmc:"青岛市警官培训学校",
-          kszh:"1栋2楼202室5号",
-          时间:"90分钟", -->
-
-    <view  class="TopBox" >
+    <view wx:if="{{items.orderStatus === 1 || items.orderStatus === 2}}" class="TopBox" >
       <view class="imgBox">
         <image src="{{items.ecologyThirdOrder.wareIcon||''}}" mode="aspectFill" class="img"></image>
       </view>
@@ -27,13 +19,26 @@
         </view>
       </view>
     </view>
-    
+    <view wx:else>
+      <view  class="TopBox" wx:for="{{items.orderDetailsList}}" wx:for-item="items2">
+      <view class="imgBox">
+        <image src="{{items2.wareIcon||''}}" mode="aspectFill" class="img"></image>
+      </view>
+      <view class="conent">
+        <view class="textone name">{{items2.wareName||''}}</view>
+        <view class="textone region">
+          <text>{{items.finishTime||''}}</text>
+          <text class=" moneyS">￥{{items2.price||'0.00'}}</text>
+        </view>
+      </view>
+    </view>
+    </view>
  
     <!--payStatus 支付状态  1付款成功  2 付款完成 -->
     <!--orderStatus 1 :线下收款   2:客户已取消 -->
-    <!-- <view wx:if="{{items.orderStatus === 1}}" class="textone money">线下收款</view>
+    <view wx:if="{{items.orderStatus === 1}}" class="textone money">线下收款</view>
     <view wx:elif="{{items.orderStatus === 2}}" class="textone money">客户已取消</view>
-    <view wx:else class="textone money">实收：<text>￥{{items.factPrice||''}}</text></view> -->
+    <view wx:else class="textone money">实收：<text>￥{{items.factPrice||''}}</text></view>
   </view>
 
 

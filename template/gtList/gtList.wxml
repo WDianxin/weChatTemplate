@@ -1,30 +1,63 @@
 <!-- 我的订单列表(待沟通订单,和待服务订单)模块 -->
 <template name="gtList">
   <view class="gtListBox">
-    <view class="li">
-      <text class="lable">考试名称 : </text>
-      <text  class="conten">{{items.ksmc}}</text>
+    <view class="li timeF">
+      <text class="lable">服务时间：</text>
+      <text wx:if="{{items.pageType === 'Df'}}" class="conten">{{items.serviceTime||''}}</text>
+      <text wx:else class="conten">待与客户确认</text>
     </view>
     <view class="li">
-      <text class="lable">考试日期 : </text>
-      <text  class="conten">{{items.kssj}}</text>
+      <text class="lable">订单号:</text>
+      <text class="conten">{{items.businessNo||''}}</text>
     </view>
     <view class="li">
-      <text class="lable">考试地点 : </text>
-      <text  class="conten">{{items.ksdd}}</text>
+      <text class="lable">服务类型：</text>
+      <text class="conten">{{items.wareName||''}}</text>
     </view>
     <view class="li">
-      <text class="lable">学校 : </text>
-      <text  class="conten">{{items.xxmc}}</text>
-    </view>
-    <view class="li">
-      <text class="lable">考试时长 : </text>
-      <text  class="conten">{{items.kszsj}}</text>
-    </view>
+      <text class="lable">派单时间：</text>
+      <!-- <text class="conten">{{items.receiveTime||''}}</text> -->
+      <text class="conten">{{items.createTime||''}}</text>
 
-    
-   
-   
+    </view>
+    <view class="li">
+      <text class="lable">客户姓名：</text>
+      <text class="conten">{{items.customerName||''}}</text>
+    </view>
+    <view class="li">
+      <text class="lable">联系电话：</text>
+      <text class="conten" style="color:#6299E2;">{{items.customerPhone||''}}</text>
+    </view>
+    <view class="li">
+      <text class="lable">客户地址：</text>
+      <text class="conten">{{items.customerAddress||''}}</text>
+    </view>
+    <view class="li">
+      <text class="lable">订单状态：</text>
+      <!-- * 订单状态0：待接单1已接单2已完成 -->
+      <text class="conten" wx:if="{{items.orderStatus === 0}}">待上门服务</text>
+      <text class="conten" wx:if="{{items.orderStatus === 1}}">已接单</text>
+      <text class="conten" wx:if="{{items.orderStatus === 2}}">已完成</text>
+    </view>
+    <view wx:if="{{items.pageType === 'Dg'}}" class="but">
+      <view catchtap="SettingsTime" data-businessno="{{items.businessNo}}">
+        设置上门时间
+      </view>
+      <view catchtap="call" data-call="{{items.customerPhone}}" class="call">
+        联系客户
+      </view>
+    </view>
+    <view wx:if="{{items.pageType === 'Df'}}" class="but">
+      <view catchtap="guanDan" data-businessno="{{items.businessNo}}" data-source="{{items.source}}"
+        data-infoid="{{items.infoId}}" data-wareId="{{items.wareId}}" style="width:26%">
+        关闭订单
+      </view>
+      <view catchtap="fuKuan" data-businessno="{{items.businessNo}}" data-source="{{items.source}}"
+        data-infoid="{{items.infoId}}" data-wareId="{{items.wareId}}" class="call" style="width:60%">
+        立即收款
+      </view>
+
+    </view>
   </view>
 
 </template>

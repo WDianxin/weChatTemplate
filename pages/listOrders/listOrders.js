@@ -12,7 +12,8 @@ Page({
     searchValue: "", //搜索内容
     triggered: false, //设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发
     loadCompletion: false, //是否分页数据都加载完成
-    
+    listArr1: [], //待服务订单
+    listArr2: [], //已完成订单
     pageNum0: 1, //待沟通订单当前页码
     pageNum1: 1, //待服务订单当前页码
     pageNum2: 1, //已完成订单当前页码
@@ -23,14 +24,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('options==',options)
-    if(options.title){
-      // this.selectComponent("#listOrderDg").selectServiceNameList(0);
-      console.log(' this.selectComponent("#listOrderDg").listArr0', this.selectComponent("#listOrderDg").listArr0)
-      console.log(' this.selectComponent("#listOrderDg")', this.selectComponent("#listOrderDg"))
-      this.selectComponent("#listOrderDg").addList(options.title);
-    }
-    return
     var that = this;
     //判断设备类型
     wx.getSystemInfo({
@@ -56,21 +49,20 @@ Page({
       })
     }
     this.selectComponent("#listOrderYw").selectServiceNameList(0);
+    this.selectComponent("#listOrderYw").selectServiceNameList(1);
+    this.selectComponent("#listOrderYw").selectServiceNameList(2);
     wx.showLoading({
       title: '加载中',
       mask: true
     })
+    this.selectComponent("#listOrderDg").selectThirdOrder('', 0);
+    this.selectComponent("#listOrderDf").selectThirdOrder('', 1);
     this.selectComponent("#listOrderYw").selectOrderDetails('search', );
 
   },
   onShow: function (options) {
 
   },
-  nextPage(){
-    wx.navigateTo({
-      url: `/pages/identitySelection/identitySelection`,
-    })
-},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

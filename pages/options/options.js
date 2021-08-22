@@ -18,6 +18,10 @@ Page({
 	},
 	//退出登录
 	outLogin() {
+		wx.redirectTo({
+			url: '/pages/login/login',
+		})
+		return
 		let hmcId = app.auth.getHmcId();
 		if (!hmcId) return
 		wx.showLoading({

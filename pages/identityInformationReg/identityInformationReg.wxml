@@ -1,14 +1,8 @@
 <!--pages/identityInformationReg/identityInformationReg.wxml注册模块(账号信息)-->
 <navBar back navigationBarTitle='注册'></navBar>
 <View class="container">
-  <!-- <import src="../../template/registerSteps/registerSteps.wxml" /> -->
-  <!-- <template  wx:if="{{ submitType != 1&&submitType != 2?true:false}}" is="steps" data="{{active1:true}}"></template> -->
-  <van-cell-group>
-    <van-field model:value="{{ name }}" label="姓名" placeholder="请输入姓名" required />
-  </van-cell-group>
-  <van-cell-group>
-    <van-field model:value="{{ userId }}" label="身份证号" placeholder="请输入身份证号" required />
-  </van-cell-group>
+  <import src="../../template/registerSteps/registerSteps.wxml" />
+  <template  wx:if="{{ submitType != 1&&submitType != 2?true:false}}" is="steps" data="{{active1:true}}"></template>
   <van-cell-group>
     <van-field model:value="{{ mobile }}" label="手机号" placeholder="请输入手机号" required />
   </van-cell-group>
@@ -18,16 +12,16 @@
   <van-cell-group>
     <van-field model:value="{{ newPasswordQ }}" label="确认密码" type="password" placeholder="请再次输入密码" required />
   </van-cell-group>
-  <!-- <van-cell-group>
+  <van-cell-group>
     <van-field model:value="{{ code }}" clearable label="短信验证码" placeholder="请输入验证码" border="{{ false }}"
       use-button-slot required>
       <van-button slot="button" size="small" type="primary" color="#1989fa" disabled='{{disabled}}' bindtap="getCode">{{codename}}
         </van-button>
     </van-field>
-  </van-cell-group> -->
+  </van-cell-group>
   <view class='submit-wrapper'>
-    <button class='submit-btn' disabled="{{name&userId&mobile&&newPassword&&newPasswordQ?false:true}}"
-      bindtap='nextPage'>提 交</button>
+    <button class='submit-btn' disabled="{{mobile&&newPassword&&newPasswordQ&&code?false:true}}"
+      bindtap='nextPage'>下一步</button>
       <!-- <button class='submit-btn' 
       bindtap='nextPage'>下一步</button> -->
   </view>

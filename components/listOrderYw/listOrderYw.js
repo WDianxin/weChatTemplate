@@ -28,14 +28,7 @@ Component({
     mainActiveIndex: 0, //类型选择(左侧选中项的索引)
     activeId: '', //类型选择(右侧选中项的 id，支持传入数组)
     activeId: null,
-    listArr2: [{
-      ksmc:"消防安全基础知识考试",
-      kssj:"2021-8-20 08:00",
-      ksdd:"消防安全青岛市市北区同安路10号",
-      xxmc:"青岛市警官培训学校",
-      kszh:"1栋2楼202室5号",
-      时间:"90分钟",
-    }],
+    listArr2: [],
     typeSeachList: [],
     qingXiList: [], //电器清洗搜索数据集合
     fangWuList: [], //房屋搜索数据集合
@@ -59,8 +52,6 @@ Component({
     // 我的订单(已完成订单)查询
 
     selectOrderDetails(type) {
-     
-
       if (type === 'loadMore') { //滚动到底部,加载更多
         this.setData({
           pageNum: this.data.pageNum + 1,
@@ -99,8 +90,6 @@ Component({
         title: '加载中',
         mask: true
       })
-      
-
       app.reqFetch.listOrder.selectOrderDetails(obj).then(res => {
         wx.hideLoading()
         if (res.data.code === 1) {

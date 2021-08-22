@@ -36,17 +36,7 @@ Component({
       }
       return value;
     },
-    listArr0: [
-      // {
-        // ksmc:"消防安全基础知识考试",
-        // kssj:"2021-8-20 08:00",
-        // ksdd:"消防安全青岛市市北区同安路10号",
-        // xxmc:"青岛市警官培训学校",
-        // kszh:"1栋2楼202室5号",
-        // kszsj:"90分钟",
-        // sfks:"否",
-      // }
-    ], //待沟通订单
+    listArr0: [], //待沟通订单
     STimeBool: false,
     pageNum: 1, //待沟通订单当前页码
     minHour: 10,
@@ -61,28 +51,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    addList(title){
-      console.log('金水路',title)
-      let list  = this.data.listArr0;
-      console.log('list===',list)
-      list.unshift({
-        ksmc:title,
-        kssj:"2021-8-20 08:00",
-        ksdd:"消防安全青岛市市北区同安路10号",
-        xxmc:"青岛市警官培训学校",
-        kszh:"1栋2楼202室5号",
-        kszsj:"90分钟",
-      })
-
-      this.setData({
-        listArr0:list
-      })
-    },
-    nextPage(){
-        wx.navigateTo({
-          url: `/pages/identitySelection/identitySelection`,
-        })
-    },
     // 我的订单(待沟通订单和带服务订单)查询
     selectThirdOrder(type) {
       if (type === 'loadMore') { //滚动到底部,加载更多
@@ -118,7 +86,6 @@ Component({
         title: '加载中',
         mask: true
       })
-     
       app.reqFetch.listOrder.selectThirdOrder(obj).then(res => {
         wx.hideLoading()
         if (res.data.code === 1) {

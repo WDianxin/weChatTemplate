@@ -61,10 +61,12 @@ Component({
     //点击轮播图片跳转到相应的页面或地址
     toUrl(e) {
       // 承载网页的容器。会自动铺满整个小程序页面，个人类型的小程序暂不支持使用。
-      // wx.miniProgram.navigateTo({
-      //   url: 'https://www.baidu.com/'
-      // })
-      let url = e.currentTarget.dataset.activityurl;
+      let url = e.currentTarget.dataset.activityUrl;
+      if(!url)return
+      wx.miniProgram.navigateTo({
+        url: url
+      })
+      return
       // let url ='https://youzan.github.io/vant-weapp/#/intro';
       let src = "/pages/swiperCompH5/swiperCompH5"
       if (url) {

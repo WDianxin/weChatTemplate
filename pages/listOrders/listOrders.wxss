@@ -11,9 +11,7 @@ page {
 
 .container {
   /* box-sizing: border-box; */
-  height: calc(100% - 290rpx);
-  /* padding: 0 20rpx;
-  box-sizing: border-box; */
+  height: calc(100% - 180rpx);
 }
 
 .slide-image {
@@ -57,8 +55,7 @@ image {
   display: inline-block;
   width: 100%;
   text-align: center;
-  line-height: 60rpx;
-  margin-top: 200rpx;
+  line-height: 200rpx;
 }
 
 .scrollContent {
@@ -73,11 +70,4 @@ image {
 /* 使用具有回弹效果的滚动 */
 view {
   -webkit-overflow-scrolling: touch;
-}
-.submit-wrapper{
-  position: fixed;
-  width: 86%;
-  margin-left: 7%;
-  bottom: 20rpx;
-  font-size: 30rpx;
 }

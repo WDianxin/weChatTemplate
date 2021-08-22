@@ -11,6 +11,3 @@
  margin-left: 18rpx!important;
  font-weight: 600;
 }
-.container{
-  padding-top: 20rpx;
-}

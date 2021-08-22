@@ -15,7 +15,7 @@
   </View>
   <View class="listBox" bindtap="register" data-type="shangHu">
     <view class="imgbox">
-      <image src="../../image/geTiGongShang.png" class="image" />
+      <image src="../../image/geRenJingYing.png" class="image" />
     </view>
     <view class="content">
       <view class="title">我是个体工商户（有营业执照）</view>
@@ -27,7 +27,7 @@
   </View>
   <View class="listBox staff" bindtap="register" data-type="yuanGong">
     <view class="imgbox">
-      <image src="../../image/qiYeYuangong.png" class="image" />
+      <image src="../../image/geRenJingYing.png" class="image" />
     </view>
     <view class="content">
       <view class="title">我是企业员工（企业为海尔生态合作商）</view>

@@ -39,8 +39,8 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.12.1",
-  "appid": "wx93aa2eee1910fbae",
-  "projectname": "%E8%80%83%E8%AF%95%E6%88%90%E7%BB%A9%E6%9F%A5%E8%AF%A2testQuery",
+  "appid": "wxc51490ed1ceb6dc9",
+  "projectname": "%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E6%9D%BF",
   "debugOptions": {
     "hidedInDevtools": []
   },
@@ -49,6 +49,12 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
     "plugin": {
       "list": []
     },
@@ -159,20 +165,9 @@
           "scene": null
         },
         {
-          "name": "pages/login/login",
-          "pathName": "pages/login/login",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/identitySelection/identitySelection",
-          "pathName": "pages/identitySelection/identitySelection",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/queryList/queryList",
-          "pathName": "pages/queryList/queryList",
+          "id": -1,
+          "name": "pages/identitySelectionReg/identitySelectionReg",
+          "pathName": "pages/identitySelectionReg/identitySelectionReg",
           "scene": null
         }
       ]

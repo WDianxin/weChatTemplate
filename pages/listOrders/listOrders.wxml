@@ -1,13 +1,21 @@
 <!--pages/listOrders/listOrders.wxml 我的订单-->
-<navBar navigationBarTitle="考试动态"></navBar>
+<navBar navigationBarTitle="我的订单"></navBar>
 <view class="container">
-  <van-search value="{{ searchValue }}" shape="round" placeholder="搜索考试名称" bind:change="searchListOrders" />
+  <van-search value="{{ searchValue }}" shape="round" placeholder="搜索订单号、订单名称" bind:change="searchListOrders" />
+  <van-tabs active="{{ active }}" bind:change="onChange" color="#6299E2" offset-top="{{offsetTop}}" line-width="100"
+    line-height="2" sticky="{{true}}" swipeable style="height:100%">
+    <van-tab title="待沟通订单">
+      <listOrderDg id="listOrderDg" refresherEnabled="{{refresherEnabled}}" searchValue="{{searchValue}}"> </listOrderDg>
+    </van-tab>
+    <van-tab title="待服务订单">
+      <listOrderDf id="listOrderDf" refresherEnabled="{{refresherEnabled}}" searchValue="{{searchValue}}"> </listOrderDf>
+    </van-tab>
+    <van-tab title="已完成订单">
+      <!-- listOrderYw -->
+      <listOrderYw id="listOrderYw" refresherEnabled="{{refresherEnabled}}" searchValue="{{searchValue}}"> </listOrderYw>
+    </van-tab>
+  </van-tabs>
 
-  <listOrderDg id="listOrderDg" refresherEnabled="{{refresherEnabled}}" searchValue="{{searchValue}}"> </listOrderDg>
-  <!-- <view class='submit-wrapper'>
-    <button class='submit-btn'
-      bindtap='nextPage'> + 添加考试</button>
-  </view> -->
   <!-- //返回顶部 -->
   <van-icon name="arrow-up" size="26" class='goTop' wx:if='{{floorstatus}}' color="#6299E2" bindtap="goTop" />
 

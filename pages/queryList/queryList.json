@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "navBar": "/components/navbar/navbar",
-    "listOrderDf": "/components/listOrderDf/listOrderDf"
-  }
-}

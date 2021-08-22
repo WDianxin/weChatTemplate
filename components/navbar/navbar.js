@@ -11,7 +11,7 @@ Component({
     //标题
     navigationBarTitle: {
       type: String,
-      value: '考试'
+      value: '智家生活服务兵端'
     },
     //是否有返回按钮
     back: {

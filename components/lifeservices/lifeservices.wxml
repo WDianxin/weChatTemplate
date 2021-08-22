@@ -1,8 +1,0 @@
-<!--components/typeWash/typeWash.wxml 生活服务-->
-<view class="lifeservicesBox">
-  <view wx:for="{{washList}}" data-item="item" class="li" bindtap="toList" data-id="{{item.id}}" data-wareid="{{item.wareId}}"  data-source="{{item.source}}" data-type="房屋清洗">
-    <image src="{{item.wareIcon}}"></image>
-    <text>{{item.wareName}}</text>
-  </view>
-  <view style="width:20rpx;height:100%"></view>
-</view>

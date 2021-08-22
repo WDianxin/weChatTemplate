@@ -34,6 +34,7 @@ Page({
   },
   //获取手机验证码
   getCode: function () {
+    return
     if (this.data.disabled) return
     var _this = this;
     if (!app.util.telTest(this.data.mobile)) {
@@ -90,6 +91,10 @@ Page({
   },
   //下一步和換綁手機
   nextPage: function (e) {
+    wx.navigateTo({
+      url: `/pages/newPassword/newPassword?type=${this.data.type}`,
+    })
+    return
     let type = this.data.type;
     var _this = this;
     if (!app.util.telTest(this.data.mobile)) {

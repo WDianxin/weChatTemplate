@@ -1,19 +1,21 @@
 <!--components/listOrderDg/listOrderDg.wxml 我的订单待沟通-->
-<view style="height: 100%" class="container">
+<view style="height: 100%">
   <scroll-view scroll-y style="width: 100%; height: auto;min-height:{{pHeight}};-webkit-overflow-scrolling: touch;" refresher-enabled="{{refresherEnabled}}"
     refresher-threshold="{{100}}" refresher-default-style="white" refresher-background="#ccc"
     refresher-triggered="{{triggered}}" bindrefresherpulling="onPulling" bindrefresherrefresh="onRefresh"
     bindrefresherrestore="onRestore" bindrefresherabort="onAbort" scroll-top="{{scrollTop}}"
     bindscrolltolower="loadMore" bindscroll="scrollFn">
     <view class="scrollContent" style="min-height: {{pHeight}}">
-      <view class=" nullText" wx:if="{{listArr0.length == 0?true:false}}">
-        您还没有报名相关考试
-       <view> <button class='submit-btn' style="color:#fff;background-color:#6299E2" size="mini" bindtap='nextPage'> + 添加考试</button></view>
+      <view class="titleRemark" wx:if="{{listArr0.length>0?true:false}}">
+        联系客户后请<text>设置上门时间</text>，否则该订单会被<text>重新分派</text>给其他人
+      </view>
+      <view class="titleRemark nullText" wx:else>
+        暂无数据
       </view>
       <import style="../../template/gtList.wxml"></import>
       <view>
         <import src="../../template/gtList/gtList.wxml" />
-        <view class="list" wx:for="{{listArr0}}" wx:for-item="items" >
+        <view class="list" wx:for="{{listArr0}}" wx:for-item="items">
           <view>
             <view>
               <template is="gtList" data="{{items}}"></template>
@@ -24,8 +26,10 @@
     </view>
 
   </scroll-view>
-  <view class='submit-wrapper' wx:if="{{listArr0.length > 0?true:false}}">
-    <button class='submit-btn' style="color:#fff;background-color:#6299E2" size="mini" bindtap='nextPage'> + 添加考试</button>
-  </view>
+  <!-- 上门时间 -->
+  <van-popup show="{{ STimeBool }}" position="bottom" bind:close="onClose" class="popup" custom-style="width:100%" >
+    <van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}"
+      bind:confirm="timeConfirm" formatter="{{ formatter }}" bind:cancel="timeCancel" />
+  </van-popup>
 
 </view>

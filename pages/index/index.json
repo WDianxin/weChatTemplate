@@ -2,9 +2,7 @@
   "usingComponents": {
     "navBar": "/components/navbar/navbar",
     "typeWash":"/components/typeWash/typeWash",
-    "swiperComp":"/components/swiperComp/swiperComp",
-    "lifeservices":"/components/lifeservices/lifeservices",
-    "bestChoice":"/components/bestChoice/bestChoice"
+    "swiperComp":"/components/swiperComp/swiperComp"
   },
   "navigationStyle": "custom",
   "navigationBarBackgroundColor": "#1D8BE8",

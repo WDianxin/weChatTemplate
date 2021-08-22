@@ -105,6 +105,13 @@ Page({
    * 点击登录按钮
    */
   handleSubmit(e) {
+    wx.showToast({
+      title: "登录成功",
+    })
+    wx.reLaunch({
+      url: '/pages/index/index?login=1',
+    })
+    return
 
     if (e.detail.userInfo) {
       e.detail.userInfo.genderName = e.detail.userInfo.gender === 1 ? "男" : "女";
@@ -118,7 +125,7 @@ Page({
     }
     if (this.data.account === '') {
       wx.showToast({
-        title: '请输入账号',
+        title: '请输入手机号或工号',
         icon: 'none'
       })
       return;
@@ -140,19 +147,18 @@ Page({
     wx.showLoading({
       title: '登陆中',
     })
-    // let data = {
-    //   username: this.data.account, //用户工号
-    //   password: this.data.password, //密码
-    //   // verifyCode: this.data.verifyCode, //验证码
-    //   verifyCode: '1111', //验证码(隐藏值为1111)
-    //   captcha: this.data.captcha
-    // }
-    this.bindOpenId()
-    // if(this.data.hmcId){
-    //   this.outLogin(this.data.hmcId,data)
-    // }else{
-    //   this.verifyCode(data)
-    // }
+    let data = {
+      username: this.data.account, //用户工号
+      password: this.data.password, //密码
+      // verifyCode: this.data.verifyCode, //验证码
+      verifyCode: '1111', //验证码(隐藏值为1111)
+      captcha: this.data.captcha
+    }
+    if(this.data.hmcId){
+      this.outLogin(this.data.hmcId,data)
+    }else{
+      this.verifyCode(data)
+    }
 
   },
   /**
@@ -202,10 +208,6 @@ Page({
 
   //登录根据户名和密码验证成功后,根据用户hmcId和openId 绑定openid
   bindOpenId(hmcId, openId) {
-    wx.reLaunch({
-      url: '/pages/index/index?login=1',
-    })
-    return
     if (!hmcId || !openId) return
     let obj = {
       hmcId: hmcId,
@@ -263,8 +265,7 @@ Page({
   //点击注册
   registration() {
     wx.navigateTo({
-      // url: '/pages/identitySelectionReg/identitySelectionReg',
-      url: '/pages/identityInformationReg/identityInformationReg',
+      url: '/pages/identitySelectionReg/identitySelectionReg',
     })
   },
   //忘记密码

@@ -22,6 +22,10 @@ Page({
   },
   //点击完成
   completion() {
+    wx.reLaunch({
+      url: '/pages/index/index',
+    })
+    return
     if (this.data.original === '') {
       wx.showToast({
         title: '请输入原始密码',

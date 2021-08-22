@@ -3,34 +3,18 @@
     "pages/index/index",
     "pages/login/login",
     "pages/my/my",
-    "pages/myBurse/myBurse",
-    "pages/quotation/quotation",
     "pages/listOrders/listOrders",
-    "pages/listOrdersDetails/listOrdersDetails",
-    "pages/myOrders/myOrders",
-    "pages/identitySelection/identitySelection",
     "pages/identitySelectionReg/identitySelectionReg",
     "pages/myData/myData",
-    "pages/serveTerms/serveTerms",
     "pages/changePassword/changePassword",
     "pages/newPassword/newPassword",
-    "pages/identityBusinessReg/identityBusinessReg",
     "pages/identityStaffReg/identityStaffReg",
     "pages/identityInformationReg/identityInformationReg",
-    "pages/identitySuccessfulSubmissionReg/identitySuccessfulSubmissionReg",
-    "pages/companySelect/companySelect",
     "pages/options/options",
-    "pages/cardBindingInformation/cardBindingInformation",
-    "pages/cardBankInformation/cardBankInformation",
-    "pages/cardLicenseIformation/cardLicenseIformation",
-    "pages/agreement/agreement",
     "pages/changeMobile/changeMobile",
     "pages/forgotPassword/forgotPassword",
     "pages/swiperCompH5/swiperCompH5",
-    "pages/listOrdersDetailsF/listOrdersDetailsF",
-    "pages/listOrderDetailsS/listOrderDetailsS",
-    "pages/shareAppMessage/shareAppMessage",
-    "pages/queryList/queryList"
+    "pages/shareAppMessage/shareAppMessage"
   ],
   "permission": {
     "scope.userLocation": {
@@ -62,7 +46,7 @@
         "pagePath": "pages/listOrders/listOrders",
         "iconPath": "image/fonts/icondingdan-weixuanzhong.png",
         "selectedIconPath": "image/fonts/icondingdan-xuanzhong.png",
-        "text": "考试"
+        "text": "订单"
       },
       {
         "pagePath": "pages/my/my",
