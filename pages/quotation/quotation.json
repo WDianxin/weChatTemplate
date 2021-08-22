@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "navBar": "/components/navbar/navbar",
+    "swiperComp":"/components/swiperComp/swiperComp",
+    "productDetails":"/components/productDetails/productDetails",
+    "specifications":"/components/specifications/specifications",
+    "paymentCode":"/components/paymentCode/paymentCode"
+  }
+}

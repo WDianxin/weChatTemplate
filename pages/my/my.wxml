@@ -1,0 +1,35 @@
+<navBar  navigationBarTitle="我的"></navBar>
+<view class="container userBox">
+  <div class="user">
+    <image src="{{userInfoData.avatar?userInfoData.avatar:'../../image/user.png'}}" class="userImg" />
+    <view class="telType">
+      <view class="userOne">{{userInfoData.name}}</view>
+      <view class="userTwo">{{userInfoData.sex}}</view>
+    </view>
+  </div>
+  <div class="list">
+   
+    <van-cell size="large" is-link bind:click="goToURL" data-url="../myData/myData">
+      <view slot="icon">
+        <van-icon size="24px" name="../../image/fonts/iconziliao.png" />
+      </view>
+      <view slot="title"> 
+        <view class="van-cell-text">
+          <text>我的资料</text>
+        </view>
+      </view>
+    </van-cell>
+ 
+    <view style="height:20rpx"></view>
+    <van-cell size="large" is-link bind:click="goToURL" data-url="../options/options">
+      <view slot="icon">
+        <van-icon size="24px" name="../../image/fonts/iconshezhi.png" />
+      </view>
+      <view slot="title">
+        <view class="van-cell-text">
+          <text>设置</text>
+        </view>
+      </view>
+    </van-cell>
+  </div>
+</view>

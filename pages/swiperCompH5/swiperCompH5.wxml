@@ -1,0 +1,4 @@
+<!--pages/swiperCompH5/swiperCompH5.wxml 轮播图外联h5-->
+<View class="container">
+  <web-view wx:if="{{h5url}}" src="{{h5url}}"></web-view>
+</View>

@@ -1,0 +1,83 @@
+/* pages/listOrders/listOrders.wxss */
+@import '../../vant-weapp/common/index.wxss';
+@import "../../template/gasList/gasList.wxss";
+@import "../../template/gtList/gtList.wxss";
+
+page {
+
+  background-color: #f7f7f7;
+  /* box-sizing: border-box; */
+}
+
+.container {
+  /* box-sizing: border-box; */
+  height: calc(100% - 290rpx);
+  /* padding: 0 20rpx;
+  box-sizing: border-box; */
+}
+
+.slide-image {
+  width: 100%;
+  background-size: cover;
+}
+
+.tablBut button {
+  display: inline-block;
+  width: 50%;
+}
+
+.list {
+  background: #fff;
+}
+
+image {
+  display: inline-block;
+  object-fit: contain;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.titleRemark {
+  color: #767676;
+  font-size: 28rpx;
+  padding: 10rpx 26rpx;
+  line-height: 33rpx;
+}
+
+.titleRemark text {
+  color: #FC6F80;
+}
+
+.popup {
+  width: 100%;
+}
+
+/* //暂无数据 */
+.nullText {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  line-height: 60rpx;
+  margin-top: 200rpx;
+}
+
+.scrollContent {
+  padding-bottom: 60rpx;
+  box-sizing: border-box;
+}
+
+.iosBottom {
+  width: 100%;
+  height: 200rpx;
+}
+/* 使用具有回弹效果的滚动 */
+view {
+  -webkit-overflow-scrolling: touch;
+}
+.submit-wrapper{
+  position: fixed;
+  width: 86%;
+  margin-left: 7%;
+  bottom: 20rpx;
+  font-size: 30rpx;
+}

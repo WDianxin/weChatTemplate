@@ -1,0 +1,181 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": false,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.1",
+  "appid": "wx93aa2eee1910fbae",
+  "projectname": "%E8%80%83%E8%AF%95%E6%88%90%E7%BB%A9%E6%9F%A5%E8%AF%A2testQuery",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/detailed/detailed",
+          "pathName": "pages/detailed/detailed",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/myData/myData",
+          "pathName": "pages/myData/myData",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/myOrde/myOrde",
+          "pathName": "pages/myOrde/myOrde",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/valuation/valuation",
+          "pathName": "pages/valuation/valuation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/myCarDetails/myCarDetails",
+          "pathName": "pages/myCarDetails/myCarDetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/myOrdeDetailed/myOrdeDetailed",
+          "pathName": "pages/myOrdeDetailed/myOrdeDetailed",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/changePassword/changePassword",
+          "pathName": "pages/changePassword/changePassword",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/changePassword/changePassword",
+          "pathName": "pages/changePassword/changePassword",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/newPassword/newPassword",
+          "pathName": "pages/newPassword/newPassword",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/listOrders/listOrders",
+          "pathName": "pages/listOrders/listOrders",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/identitySelection/identitySelection",
+          "pathName": "pages/identitySelection/identitySelection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/queryList/queryList",
+          "pathName": "pages/queryList/queryList",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

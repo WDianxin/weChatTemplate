@@ -1,0 +1,91 @@
+/**app.wxss**/
+
+page{
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+  Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei',
+  sans-serif;
+  background-color: #F7F7F7;
+}
+.container {
+  color: #333;
+  box-sizing: border-box;
+  margin-top:90rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
+} 
+
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+
+/*单行溢出*/
+.one_txt_cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*tab 折叠title*/
+.custom van-cell view{
+  color: #3D709B !important;
+}
+.tabactive {
+  background-color: #3D709B !important;
+  border-radius: 15rpx;
+}
+.tabactive view{
+  color: white;
+}
+/* //顯示一行 */
+.textone {
+  display: block;
+  /*内联对象需加*/
+  /* width:20rem !important; */
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 不换行 */
+  overflow: hidden;
+  /* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow: ellipsis;
+  /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.van-icon , .van-icon--image {
+  vertical-align: middle!important;
+}
+/* 提交按钮样式 */
+.submit-btn {
+  background-image: -webkit-linear-gradient(90deg, #1989fa 0%, #1989fa 100%), -webkit-linear-gradient(#fff, #fff);
+  background-image: linear-gradient(90deg, #1989fa 0%, #1989fa 100%), linear-gradient(#fff, #fff);
+  box-shadow: 0 7rpx 30rpxfont-s 0 rgba(255, 61, 2, 0.2);
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 60rpx auto 0;
+}
+/* button按钮禁止选中样式 */
+button[disabled] {
+  color: #fff !important;
+  background: #6299E2 !important;
+  opacity: 0.6;
+}
+/* 返回顶部 */
+.goTop {
+  display: inline-block;
+  height: 60rpx;
+  width: 60rpx;
+  position: fixed;
+  bottom: 50rpx;
+  background: #fff;
+  right: 30rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30rpx;
+  border: 1rpx solid #6299E2 ;
+  box-shadow: 0px 0px 1px 1px #fff;
+}

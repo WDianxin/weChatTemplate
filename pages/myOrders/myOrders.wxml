@@ -1,0 +1,52 @@
+<!--pages/myOrders/myOrders.wxml 我的账单-->
+<navBar back navigationBarTitle="我的账单"></navBar>
+<view class="container myOrders">
+  <scroll-view scroll-y style="width: 100%; height: 100%" refresher-enabled="{{true}}" refresher-threshold="{{100}}"
+    scroll-top='{{topNum}}' refresher-default-style="white" refresher-background="#ccc"
+    refresher-triggered="{{triggered}}" bindrefresherpulling="onPulling" bindrefresherrefresh="onRefresh"
+    bindrefresherrestore="onRestore" bindrefresherabort="onAbort" bindscrolltolower="loadMore" bindscroll="scrollFn">
+    <van-cell size="large" bindtap="onList" wx:for="{{listArr}}" wx:for-item="items" use-label-slot
+      value-class="valueBox" title-class="titleBox" data-orderNum="{{items.orderNum}}" data-source="{{items.source}}"
+      custom-class="customBox">
+      <block wx:if="{{items.orderStatus === 1 || items.orderStatus === 2}}">
+        <view slot="icon" class="icon-text" class="imgBox">
+          <image src="{{items.ecologyThirdOrder.wareIcon||''}}"></image>
+        </view>
+        <view slot="title">
+          <view class="title-text">
+            <text>{{items.ecologyThirdOrder.wareName||''}}</text>
+          </view>
+        </view>
+        <view slot="label">
+          <view class="label-text">
+            <text>{{items.ecologyThirdOrder.finishTime||''}}</text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view slot="icon" class="icon-text" class="imgBox">
+          <image src="{{items.wareIcon||''}}"></image>
+        </view>
+        <view slot="title">
+          <view class="title-text">
+            <text>{{items.wareName||''}}</text>
+          </view>
+        </view>
+        <view slot="label">
+          <view class="label-text">
+            <text>{{items.finishTime||''}}</text>
+          </view>
+        </view>
+      </block>
+      <view class="tab-text">
+          <text>+{{items.factPrice||0.00}}</text>
+        </view>
+
+
+    </van-cell>
+
+
+  </scroll-view>
+  <!-- //返回顶部 -->
+  <van-icon name="arrow-up" size="26" class='goTop' wx:if='{{floorstatus}}' color="#6299E2" bindtap="goTop" />
+</view>

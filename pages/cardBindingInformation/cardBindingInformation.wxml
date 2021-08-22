@@ -1,0 +1,120 @@
+<!--pages/cardBindingInformation/cardBindingInformation.wxml 绑卡模块 基本信息-->
+<navBar back navigationBarTitle='绑定银行卡'></navBar>
+<View class="container">
+  <import src="../../template/registerSteps/registerSteps.wxml" />
+  <template wx:if="{{customerType == '2'}}" is="steps"
+    data="{{active1:true,titleData:['基本信息','营业执照信息','银行卡信息']}}"></template>
+  <template wx:else is="steps" data="{{active1:true,threeHide:true,titleData:['基本信息','银行卡信息']}}"></template>
+  <van-cell-group>
+    <van-field model:value="{{ name }}" label="姓名" placeholder="请输入姓名" required clearable />
+  </van-cell-group>
+  <van-cell-group border="{{ false }}" wx:if="{{isShow}}">
+    <van-field label="{{userTitle}}" required border="{{ false }}" />
+    <view class="userImgBox">
+      <view class="userImg">
+        <image src="{{certificatesInHandFront?certificatesInHandFront:'../../image/geTiGongShang.png'}}"
+          bindtap="showImg" data-type="shouChi">
+        </image>
+      </view>
+    </view>
+  </van-cell-group>
+
+  <van-cell-group>
+    <van-field model:value="{{ mobile }}" label="联系电话" placeholder="请输入联系电话" required clearable />
+  </van-cell-group>
+  <van-cell-group>
+    <van-field model:value="{{ email }}" label="邮箱" placeholder="请输入您的邮箱" required clearable />
+  </van-cell-group>
+  <van-cell-group>
+    <van-field model:value="{{ region}}" readonly label="地址" placeholder="请选择所在的区域" icon="arrow" bindtap="regionShow"
+      required />
+  </van-cell-group>
+  <van-cell-group>
+    <van-field model:value="{{ address }}" label="详细地址" placeholder="请输入您的详细地址" required clearable />
+  </van-cell-group>
+  <view style="width:100%;height:20rpx;background-color: #F7F7F7;"></view>
+  <van-cell-group>
+    <van-field model:value="{{ certificatesNumber }}" label="身份证号" placeholder="请输入您的身份证号" clearable required />
+  </van-cell-group>
+  <van-cell-group border="{{ false }}">
+    <van-field label="有效期" readonly required border="{{ false }}" title-width="{{titleWidth}}" />
+    <view class="but2">
+      <van-button plain="{{isPermanent}}" type="{{!isPermanent?'primary':'info'}}" size="small" bindtap="durationSelect"
+        data-type="gd">固定期限</van-button>
+      <van-button plain="{{!isPermanent}}" type="{{isPermanent?'primary':'info'}}" size="small" bindtap="durationSelect"
+        data-type="yj">永久</van-button>
+    </view>
+  </van-cell-group>
+  <van-cell-group wx:if="{{!isPermanent}}">
+    <picker mode="date" value="{{certificatesValidity}}" start="{{startDate}}" bindchange="bindDateChange">
+      <view class="picker">
+        <van-field model:value="{{ certificatesValidity }}" input-align="left" readonly label="有效期至" placeholder="请选择日期"
+          icon="arrow" required title-width="{{titleWidth}}" />
+      </view>
+    </picker>
+  </van-cell-group>
+  <view style="width:100%;height:20rpx;background-color: #F7F7F7;"></view>
+  <van-cell-group border="{{ false }}">
+    <van-field label="证件照片" readonly required border="{{ false }}" />
+  </van-cell-group>
+  <view class="idImgBox">
+    <view class="imgLeft">
+      <image src="{{certificatesFront?certificatesFront:'../../image/zhengJian1.png'}}" bindtap="showImg"
+        data-type="zheng">
+      </image>
+      <view class="but" bindtap="upload" data-type="zheng">上传身份证正面</view>
+    </view>
+    <view class="imgRegit">
+      <image src="{{certificatesBack?certificatesBack:'../../image/zhengJian2.png'}}" bindtap="showImg" data-type="fan">
+      </image>
+      <view class="but" bindtap="upload" data-type="fan">上传身份证反面</view>
+    </view>
+    <!-- <view class="imgLeft imgShuou">
+      <image src="{{certificatesInHandFront?certificatesInHandFront:'../../image/shouchiS.png'}}" bindtap="showImg"
+        data-type="shouChi">
+      </image>
+      <view class="but" bindtap="upload" data-type="shouChi">手持身份证照片
+      </view>
+    </view> -->
+  </view>
+  <view class="remark">
+    <text class="ts">提示:</text>
+    请保持照片<text class="zt">字迹清晰，内容完整</text>
+  </view>
+
+  <van-cell-group border="{{ false }}" wx:if="{{customerType == '3'}}">
+    <van-field label="门店照（3张）" readonly required border="{{ false }}" title-width="{{titleWidth}}" />
+  </van-cell-group>
+  <view class="idImgBox menDian" wx:if="{{customerType == '3'}}">
+    <view class="imgLeft">
+      <image src="{{store1?store1:'../../image/fonts/jiaHao.png'}}" bindtap="showImg" data-type="menDian1">
+      </image>
+      <view class="but" bindtap="upload" data-type="menDian1">上传第一张</view>
+    </view>
+    <view class="imgRegit">
+      <image src="{{store2?store2:'../../image/fonts/jiaHao.png'}}" bindtap="showImg" data-type="menDian2">
+      </image>
+      <view class="but" bindtap="upload" data-type="menDian2">上传第二张</view>
+    </view>
+    <view class="imgLeft">
+      <image src="{{store3?store3:'../../image/fonts/jiaHao.png'}}" bindtap="showImg" data-type="menDian3">
+      </image>
+      <view class="but" bindtap="upload" data-type="menDian3">上传第三张
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class='submit-wrapper'>
+    <button wx:if="{{customerType == '2'}}" class='submit-btn' bindtap='nextPage'
+      disabled="{{name&&mobile&&email&&region&&address&&certificatesNumber&&certificatesValidity&&certificatesFront&&certificatesBack&&certificatesInHandFront?false:true}}">下一步</button>
+    <button wx:else class='submit-btn' bindtap='nextPage'
+      disabled="{{name&&mobile&&email&&region&&address&&certificatesNumber&&certificatesValidity&&certificatesFront&&certificatesBack&&certificatesInHandFront&&store1&&store2&&store3?false:true}}">下一步</button>
+
+    <!-- <button class='submit-btn' bindtap='nextPage'
+     >下一步</button> -->
+  </view>
+  <!-- 城市选择 -->
+  <regionBut id="region" wx:if="{{regionShow}}" regionShow="{{regionShow}}" bindloadList="loadList"></regionBut>
+</View>

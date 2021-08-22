@@ -1,0 +1,21 @@
+<!--pages/identitySelection/identitySelection.wxml 我的认证-->
+<navBar back navigationBarTitle="考试选择"></navBar>
+<view class="container identitySelection">
+
+ <view class="listBox">
+	<view   class = "{{items.active ?'active':'list'}}" wx:for="{{listArr}}" wx:for-item="items" bindtap='selectItem' data-i='{{index}}'>
+		{{items.name}}
+	</view>
+
+
+ </view>
+
+
+ <view class='submit-wrapper'>
+    <button class='submit-btn'
+      bindtap='nextPage'>选 择</button>
+
+  </view>
+
+
+</view>

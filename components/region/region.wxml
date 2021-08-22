@@ -1,0 +1,13 @@
+<!--components/region/region.wxml 地区选择-->
+
+<van-popup show="{{ regionShow }}"  position="bottom"    round="true"
+     bind:close="onClose" >
+      <van-area
+      area-list="{{ areaList }}"
+      columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}"
+      title="城市"
+      value="370200"
+      bind:confirm="onConfirm"
+      bind:cancel="onCancel"
+    />
+</van-popup>

@@ -1,0 +1,33 @@
+<!--pages/identitySuccess/identitySuccess.wxml 认证成功/失败-->
+<navBar back navigationBarTitle="{{navigationBarTitle||'认证成功'}}"></navBar>
+<View class="container" wx:if="{{pageType === 'shenHeZhong'||pageType === 'qianShuZhong'}}">
+  <view class="contern">
+    <image src="../../image/yiTiJiaoShenHe.png"></image>
+    <text class="yt">已提交审核</text>
+    <text class="ts">您的申请已提交，我们需要1-3的工作日审核请耐心等待</text>
+    <view class="zdl" bindtap="gotIt" data-url="brack">我知道了</view>
+  </view>
+</View>
+<View class="container" wx:elif="{{pageType === 'shenHeShiBai'}}">
+  <view class="contern">
+    <image src="../../image/shiBai.png"></image>
+    <text class="yt">申请失败</text>
+    <text class="ts">{{errTitle||''}}</text>
+    <view class="zdl" bindtap="gotIt" data-url="/pages/cardBindingInformation/cardBindingInformation">重新申请</view>
+  </view>
+</View>
+<View wx:else class="container">
+  <view wx:if="{{!sucessBool}}" class="contern">
+    <image src="../../image/shiBai.png"></image>
+    <text class="yt">认证失败</text>
+    <text class="ts">失败原因：XXXXX</text>
+    <view class="zdl bg-blue" bindtap="gotIt">重新认证</view>
+    <view class="zdl" bindtap="gotIt">我知道了</view>
+
+  </view>
+  <view wx:else class="contern">
+    <image src="../../image/renZhengChengGong.png"></image>
+    <text class="yt">认证成功</text>
+    <text class="ts">您已通过服务平台个人商家认证</text>
+  </view>
+</View>

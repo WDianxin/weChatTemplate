@@ -1,0 +1,50 @@
+<!--pages/login/login.wxml登录页-->
+<!-- <navBar navigationBarTitle='登录'></navBar> -->
+<view class="container loginBox">
+  <view class='header-wrapper'>
+    <view class='logo_txt'>登  录</view>
+  </view>
+  <view class="content">
+    <view class='content-wrapper'>
+      <view class='phone-box'>
+        <van-icon name="../../image/fonts/iconyonghu.png" size="50rpx" class='iconfont iconziyuanxhdpi icon-color' />
+        <view class='phone-wrapper'>
+          <input placeholder='请输入账号' cursor-spacing="160" value='{{account}}' class='phone-text'
+            placeholder-class='phone-placeholder' bindinput='handleInput'></input>
+        </view>
+      </view>
+
+      <view class='phone-box'>
+        <van-icon name="../../image/fonts/iconmimasuo.png" size="50rpx" class='iconfont iconziyuanxhdpi icon-color' />
+        <view class='phone-wrapper'>
+          <input placeholder='请输入密码' cursor-spacing="120" value='{{password}}' password='{{!isPassword}}'
+            class='phone-text' placeholder-class='phone-placeholder' bindinput='handlePassword'></input>
+        </view>
+        <van-icon bindtap='showPassword' name="{{isPassword?'../../image/fonts/iconxianshi.png':'../../image/fonts/iconyincang.png'}}" color="#1989fa"
+          size="50rpx" class='iconfont iconziyuanxhdpi icon-color r30' />
+      </view>
+      <!-- 验证码临时注释 -->
+      <!-- <view class='phone-box'  >
+        <van-icon name="../../image/code.png" color="#1989fa" size="50rpx"
+          class='iconfont iconziyuanxhdpi icon-color' />
+        <view class='phone-wrapper'>
+          <input placeholder='请输入验证码' cursor-spacing="160" value='{{verifyCode}}' class='phone-text'
+            placeholder-class='phone-placeholder' bindinput='handleVerifyCodet'></input>
+        </view>
+      </view>
+      <view class="codeImg" >
+        <image bindtap="verifyCode" src="{{verifyCodeUrl}}" class="img"></image>
+      </view> -->
+
+    </view>
+    <view class='submit-wrapper'> 
+      <button class='submit-btn' open-type="getUserInfo" bindgetuserinfo='handleSubmit'>登 录</button>
+      <view class="other">
+        <text bindtap="forgotpassword">忘记密码?</text>
+        <text class="shu">|</text>
+        <text bindtap="registration">立即注册 <text>>></text> </text>
+      </view>
+
+    </view>
+  </view>
+</view>

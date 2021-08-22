@@ -1,0 +1,88 @@
+/* components/bestChoice/bestChoice.wxss */
+.bestChoiceBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rpx 20rpx 100rpx 20rpx;
+}
+
+
+
+.bestChoiceBox .li {
+  width: 30%;
+  height: 246rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid #FFBF2E;
+  border-radius: 4rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx 10rpx;
+}
+
+/* 解决flex布局中 space-between方法的排版问题 */
+.bestChoiceBox:after {
+  content: '';
+  width: 30%;
+}
+
+
+.bestChoiceBox .li image {
+  display: inline-block;
+  width: 80%;
+  height: 140rpx;
+  object-fit: cover;
+}
+
+.bestChoiceBox .li text {
+  color: #101010;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  margin-top: 10rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bestChoiceBox .li:nth-child(2n) {
+  border: 1px solid #8BC34A;
+}
+
+.bestChoiceBox .li:nth-child(3n) {
+  border: 1px solid #6299E2;
+}
+
+.bestChoiceBox .li:nth-child(4n) {
+  border: 1px solid #62D1E2;
+}
+
+.bestChoiceBox .li:nth-child(5n) {
+  border: 1px solid #9F84F5;
+}
+
+.bestChoiceBox .li:nth-child(6n) {
+  border: 1px solid #FF902E;
+}
+
+.bestChoiceBox .li:nth-child(7n) {
+  border: 1px solid #FC6061;
+}
+
+.bestChoiceBox .li:nth-child(8n) {
+  border: 1px solid #fc60e7;
+}
+
+.bestChoiceBox .li:nth-child(9n) {
+  border: 1px solid #8a60fc;
+}
+
+.bestChoiceBox .li:nth-child(10n) {
+  border: 1px solid #60fc87;
+}

@@ -1,0 +1,61 @@
+<!--pages/quotation/quotation.wxml 报价模块-->
+<navBar back navigationBarTitle='价格'></navBar>
+<view class="container quotation">
+  <!-- 轮播图 -->
+  <swiperComp id="swiperComp" swiperDataArr="{{swiperDataArr}}" swithHeight="400rpx"></swiperComp>
+  <van-tabs active="{{ active }}" bind:change="onChange" color="#6299E2" offset-top="{{offsetTop}}" line-width="200"
+    line-height="2" sticky swipeable>
+    <van-tab title="收费报价">
+      <view class="baoJiaBox">
+        <view class="chanpin">
+          <view class="mone">
+            <van-icon name="../../image/shouFei.png" color="#00ABE8" size="20" />
+            <text wx:if="{{sfbjData.unitS}}"> ￥{{sfbjData.defaultPrice||'0.00'}}{{sfbjData.unit}}</text>
+            <text wx:else> ￥{{sfbjData.defaultPrice||'0.00'}}/{{sfbjData.unit}}</text>
+          </view>
+          <view class="name">{{sfbjData.wareName}}</view>
+          <view class="shuoMing">服务说明:
+            <text> {{sfbjData.wareDetails||''}}</text>
+          </view>
+        </view>
+        <view class="xiangqin">
+          <van-cell-group>
+            <van-field label="规格:" model:value="{{!specificationsArr || specificationsArr.length === 0?'暂无规格':'' }}" readonly border="{{false}}" />
+            <!-- 规格选择 -->
+            <specifications id="specifications" sfbjData="{{sfbjData}}"   pageType="{{pageType}}" bind:countTotl="countTotl"
+              specificationsArr="{{specificationsArr}}"></specifications>
+          </van-cell-group>
+          <van-cell-group>
+            <van-field model:value="{{remarks }}" label="备注:" maxlength="50" placeholder="请输入备注，例如用户信息" clearable />
+          </van-cell-group>
+          <van-cell-group>
+            <van-field model:value="{{ sfbjData.bj }}" label="标准报价:" class="bold" readonly />
+          </van-cell-group>
+          <van-cell-group>
+            <van-field model:value="{{ sfbjData.shbj }}" label="实收报价:" class="boldC"
+              right-icon="../../image/fonts/iconbianji.png" bind:click-icon="editMoney" readonly />
+          </van-cell-group>
+        </view>
+      </view>
+      <view class='submit-wrapper'>
+        <button class='submit-btn' bindtap='findIsPaymentStatus'>生成收款码</button>
+      </view>
+
+    </van-tab>
+    <van-tab title="产品详情">
+      <productDetails id="productDetails" detailsData="{{sfbjData}}" detailsImg="{{detailsImg}}"
+        pageType="{{pageType}}"></productDetails>
+    </van-tab>
+  </van-tabs>
+
+  <!-- 修改价格弹窗 -->
+  <van-dialog use-slot title="修改价格" show="{{ editMoneyShow }}" show-cancel-button confirm-button-open-type="getUserInfo"
+    bind:close="onClose" bind:getuserinfo="getUserInfo">
+    <view class="editMoneyTitle">输入本次服务的实收金额(元)</view>
+    <van-field model:value="{{ neEditMoney }}" type="digit" size="30" placeholder="请输入金额元" bind:change="bindChange"
+      clearable />
+  </van-dialog>
+  <!-- 付款码 -->
+  <paymentCode id="paymentCode" showCode="{{showCode}}" codeObj="{{codeObj}}"></paymentCode>
+
+</view>

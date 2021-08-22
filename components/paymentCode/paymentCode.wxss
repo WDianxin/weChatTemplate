@@ -1,0 +1,65 @@
+/* components/paymentCode/paymentCode.wxss */
+
+.titleBox {
+  color: #474747;
+  text-align: center;
+  line-height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx 20rpx;
+}
+
+.titleBox .left,
+.titleBox .right {
+  height: .5rpx;
+  width: 40%;
+  border: 1rpx dashed #474747;
+}
+
+.titleBox .title {
+  padding: 0 10rpx;
+  font-size: 28rpx;
+}
+.name {
+  width: 100%;
+  color: #333333 ;
+  font-size: 30rpx;
+  text-align: center;
+}
+.imgBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+  width: 100%;
+} 
+.imgBox image{
+  display: inline-block;
+  width: 420rpx;  
+  height: 420rpx;
+  object-fit: contain;
+}
+.fk{
+  display: inline-block;
+  width: 100%;
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 80rpx;
+  text-align: center;
+}
+.closeBox{
+  width: 100%;
+  text-align: right;
+}
+
+.close{
+  background-color: #969696 ;
+  border-radius: 30rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  color: #fff;
+  opacity: .8;
+}

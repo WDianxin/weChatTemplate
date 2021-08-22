@@ -1,0 +1,12 @@
+<!--components/swiperComp/swiperComp.wxml轮播图片组件-->
+<view class="swiper">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{nextMargin}}" next-margin="{{previousMargin}}"
+    style="height:{{swithHeight}}">
+    <block wx:for="{{swiperDataArr}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item.bannerPic}}" data-id="{{item.id}}" data-activityUrl="{{item.activityUrl}}" bindtap="toUrl"
+          class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

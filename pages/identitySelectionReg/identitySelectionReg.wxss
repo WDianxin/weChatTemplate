@@ -1,0 +1,50 @@
+/* pages/identitySelectionReg/identitySelectionReg.wxss */
+.identitySelectionRegBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+.listBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  /* border-top: 1rpx solid #bbbbbb; */
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.imgbox .image{
+  display: inline-block;
+  width: 82rpx;
+  height: 82rpx;
+  object-fit: cover;
+  border-radius: 41rpx;
+}
+.content {
+  text-align: left;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #474747 ;
+  line-height: 44rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.content .remark{
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #bbbbbb ;
+  text-align: left;
+}
+.staff{
+  border-top: none;
+  margin-top: 20rpx;
+}
+.netImgBox{
+  flex: 1;
+}
+.netImgBox van-icon{
+  float:right;
+}

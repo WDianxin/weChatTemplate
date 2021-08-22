@@ -1,0 +1,63 @@
+/* pages/my/my.wxss */
+page {
+  background-color: #f7f7f7;
+}
+
+.userBox .user {
+  display: flex;
+  padding: 40rpx 0 64rpx 40rpx;
+  background-color: #fff;
+}
+
+.userBox .user image {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  object-fit: cover;
+  border-radius: 60rpx;
+}
+
+.userBox .user .telType {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userBox .user .telType .userOne {
+  font-size: 40rpx;
+  line-height: 60rpx;
+}
+
+.userBox .user .telType .userTwo {
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #999999;
+  margin-top: 10rpx;
+}
+
+.userBox .list .van-cell-text {
+  margin-left: 10rpx;
+}
+
+.userBox .list .shouYi {}
+
+.userBox .list .shouYi text {
+  display: inline-block;
+}
+
+.van-cell {
+  border-bottom: 1rpx solid #fff;
+}
+
+.van-cell__title,
+.van-cell__value {
+  -webkit-flex: 0;
+  flex: 0;
+}
+
+.van-cell__value,
+.van-cell__value {
+  -webkit-flex: 1 !important;
+  flex: 1 !important;
+}

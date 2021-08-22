@@ -1,0 +1,31 @@
+<!--components/listOrderYw/listOrderYw.wxml wxml我的订单已完成订单-->
+<view style="height:100%;">
+  <!-- <van-dropdown-menu direction="up" style="height:100%"> -->
+  <van-dropdown-menu style="height:100%" catchtouchmove='preventTouchMove'>
+    <van-dropdown-item id="dropdownType" title="{{ value1 }}">
+      <van-tree-select items="{{ typeSeachList }}" main-active-index="{{ mainActiveIndex }}" active-id="{{ activeId }}"
+        bind:click-nav="onClickNav" bind:click-item="onClickItem" />
+    </van-dropdown-item>
+    <van-dropdown-item value="{{ timeSelectionValue }}" options="{{ option2 }}" bind:change="timeSelectionChange" />
+  </van-dropdown-menu>
+  <scroll-view scroll-y style="width: 100%; height: auto;min-height:{{pHeight}};-webkit-overflow-scrolling: touch;"
+    refresher-enabled="{{refresherEnabled}}" refresher-threshold="{{100}}" refresher-default-style="white"
+    refresher-background="#ccc" refresher-triggered="{{triggered}}" bindrefresherpulling="onPulling"
+    bindrefresherrefresh="onRefresh" scroll-top="{{scrollTop}}" bindrefresherrestore="onRestore"
+    bindrefresherabort="onAbort" bindscrolltolower="loadMore" bindscroll="scrollFn">
+    <view class="scrollContent" style="min-height: {{pHeight}}">
+      <view wx:if="{{listArr2.length === 0?true:false}}" class="titleRemark nullText">
+        暂无数据
+      </view>
+      <import src="../../template/gasList/gasList.wxml" />
+      <view class="list" wx:for="{{listArr2}}" wx:for-item="items">
+        <view>
+          <view bindtap="onList" data-orderNum="{{items.orderNum}}" data-source="{{items.source}}">
+            <template is="gasList" data="{{items}}"></template>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

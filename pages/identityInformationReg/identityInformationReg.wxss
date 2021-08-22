@@ -1,0 +1,16 @@
+/* pages/identityInformationReg/identityInformationReg.wxss */
+@import "../../template/registerSteps/registerSteps.wxss";
+.submit-btn{
+  width: 85%;
+}
+/* 控制星号样式 */
+.van-cell--required:before {
+  left: 36rpx!important;
+}
+.van-cell__title , .van-cell__title {
+ margin-left: 18rpx!important;
+ font-weight: 600;
+}
+.container{
+  padding-top: 20rpx;
+}

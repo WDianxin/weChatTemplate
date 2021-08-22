@@ -1,0 +1,38 @@
+项目目录:
+ 
+首页:pages/index/index.wxml
+登录页:pages/login/login
+订单:pages/order/order.wxml 
+我的:pages/my/my.wxml
+我的资料:pages/myData/myData.wxml
+修改密码认证:-pages/changePassword/changePassword.wxml
+密码修改:pages/newPassword/newPassword.wxml
+认证成功/失败：pages/identitySuccess/identitySuccess
+<!--pages/options/options.wxml  设置-->
+<!--pages/myBurse.wxml 我的钱包-->
+<!--pages/identitySelection/identitySelection.wxml 我的认证(身份选择)-->
+<!--pages/listOrders/listOrders.wxml 我的订单-->
+<!--pages/myOrders/myOrders.wxml 我的账单-->
+<!--pages/myOrdersDetails/mymyOrdersDetailsOrders.wxml 我的账单和我的订单 详情页-->
+
+
+<!--pages/identitySelectionReg/identitySelectionReg.wxml注册模块(身份选择)-->
+<!--pages/identityBusinessReg/identityBusinessReg.wxml注册模块(个体工商户基本信息)-->
+<!--pages/identityStaffReg/identityStaffReg.wxml注册模块(员工和个人基本信息)-->
+<!--pages/identityInformationReg/identityInformationReg.wxml注册模块(账号信息)-->
+<!--pages/identitySuccessfulSubmissionReg/identitySuccessfulSubmissionReg.wxml注册模块(已提交审核页面)-->
+<!--components/typeWash/typeWash.wxml 生活服务-->
+<!--pages/quotation/quotation.wxml 报价模块,商品详情,付款-->
+<!--pages/searchListOrders/searchListOrders.wxml 我的订单搜索-->
+<!--pages/cardBindingInformation/cardBindingInformation.wxml 绑卡模块 基本信息-->
+<!--pages/cardLicenseIformation/cardLicenseIformation.wxml 绑卡模块  营业执照基本信息-->
+<!--pages/cardBankInformation/cardBankInformation.wxml绑卡模块 银行信息-->
+<!--pages/agreement/agreement.wxml 绑卡协议-->
+<!--pages/listOrdersDetails/listOrdersDetails.wxml我的订单详情-->
+<!--pages/changeMobile/changeMobile.wxml 换绑手机号-->
+<!--pages/forgotPassword/forgotPassword.wxml 忘记密码-->
+<!--pages/swiperCompH5/swiperCompH5.wxml 轮播图外联h5-->
+<!--pages/shareAppMessage/shareAppMessage.wxml 分享页面-->
+
+
+

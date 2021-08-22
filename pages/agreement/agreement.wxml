@@ -1,0 +1,4 @@
+<!--pages/agreement/agreement.wxml 绑卡协议-->
+<View class="container">
+  <web-view wx:if="{{h5url?true:false}}" src="{{h5url}}"></web-view>
+</View>

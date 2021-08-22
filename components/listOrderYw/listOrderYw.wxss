@@ -1,0 +1,2 @@
+/* components/listOrderYw/listOrderYw.wxss */
+@import "../../pages/listOrders/listOrders.wxss";

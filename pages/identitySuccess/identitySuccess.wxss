@@ -1,0 +1,60 @@
+/* pages/identitySuccess/identitySuccess.wxss */
+@import "../../template/registerSteps/registerSteps.wxss";
+
+page {
+  background: #fff;
+}
+
+.border {
+  width: 100%;
+  height: 10rpx;
+  background: #F7F7F7;
+}
+
+.contern {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  padding: 60rpx 100rpx;
+}
+
+.yt {
+  color: #101010;
+  font-size: 32rpx;
+  line-height: 46rpx;
+  font-weight: bold;
+  margin-top: 50rpx;
+}
+
+.ts {
+  color: #212121;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  margin-top: 10rpx;
+}
+
+.zdl {
+  color: #6299E2;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  padding: 10rpx 0rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #6299E2;
+  text-align: center;
+  margin-top: 50rpx;
+  width: 100%;
+}
+
+.contern image {
+  display: inline-block;
+  width: 240rpx;
+  height: 250rpx;
+  object-fit: cover;
+}
+
+.bg-blue {
+	background-color: #6299E2;
+	color: #fff;
+}

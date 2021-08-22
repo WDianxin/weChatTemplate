@@ -1,0 +1,12 @@
+<!--pages/options/options.wxml  设置-->
+<navBar back navigationBarTitle='设置'></navBar>
+<view class="container optionsBox">
+
+	<van-cell title="修改密码" size="large" is-link bind:click="goToURL" data-url="../changePassword/changePassword" data-type='password'> </van-cell>
+	<van-cell title="换绑手机号" size="large" is-link bind:click="goToURL" data-url="../changePassword/changePassword" data-type="changeMobile"> </van-cell>
+
+</view>
+<view class='submit-wrapper'>
+    <button class='submit-btn' 
+      bindtap='outLogin'>退出登录</button>
+  </view>

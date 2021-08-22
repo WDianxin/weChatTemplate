@@ -1,0 +1,46 @@
+<!--pages/listOrdersDetailsF/listOrdersDetailsF.wxml 订单列表详情(服务兵)-->
+<navBar back navigationBarTitle="订单详情"></navBar>
+<view class="container listOrdersDetails">
+  <view class="topBox">
+    <van-icon name="../../image/fonts/fuWuBing.png" size="50px" />
+    <text class="title">线下收款</text>
+    <text class="money"> +{{dataObj.factPrice}}</text>
+  </view>
+  <view class="listBox">
+
+    <van-cell-group border="{{ false }}">
+      <van-field input-align="left" model:value="{{ dataObj.orderNum }}" label=" 订单号:" placeholder="" readonly
+        title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-field input-align="left" model:value="{{ dataObj.finishTime }}" label="付款时间:" placeholder="" readonly
+        title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-cell  border="{{ false }}" title-width="{{titleWidth}}" title="服务类型：" model:value="{{ dataObj.ecologyThirdOrder.wareName || ''  }}" title-class="titleBox"
+        value-class="valueBox" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-field input-align="left" model:value="{{ dataObj.number }}" label="施工数量：" placeholder="" readonly
+        title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-field input-align="left" model:value="{{ dataObj.standardPrice }}" label="标准报价：" placeholder="" readonly
+        title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-field input-align="left" model:value="{{ dataObj.factPrice }}" label="实收金额：" placeholder="" readonly
+        title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-cell  border="{{ false }}" title-width="{{titleWidth}}" title="备注:" model:value="{{ dataObj.remarks }}" title-class="titleBox"
+        value-class="valueBox" />
+    </van-cell-group>
+  </view>
+  <view class="guiGe" wx:for="{{dataObj.orderDetailsList}}">
+    <text class="name">{{item.wareName}}</text>
+    <text class="num">X{{item.number}}</text>
+    <text class="mony">{{item.totalPrice}}元</text>
+  </view>
+
+</view>

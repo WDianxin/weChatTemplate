@@ -1,0 +1,7 @@
+<!--components/typeWash/typeWash.wxml 首页清洗类型-->
+<view class="typeWash">
+  <view wx:for="{{washList}}" data-item="item" class="li" bindtap="toList" data-id="{{item.id}}"  data-wareid="{{item.wareId}}" data-source="{{item.source}}" data-type="电器清洗">
+    <image src="{{item.wareIcon}}"></image>
+    <text>{{item.wareType1}}</text>
+  </view>
+</view>

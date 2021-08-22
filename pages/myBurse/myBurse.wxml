@@ -1,0 +1,74 @@
+<!--pages/myBurse.wxml 我的钱包-->
+<navBar back navigationBarTitle="我的钱包"></navBar>
+<view class="container myBurse">
+  <view class="cardBox">
+    <!-- // auditStatus //绑卡状态: null:未申请绑卡 S：审核成功；F：审核失败；P:审核中
+      // signStatus// 签署银行协议状态，0：未签署，1：签署中，2：已签署 -->
+    <view class="card" wx:if="{{getBindBankCardInfo.signStatus != '2'}}">
+      <view class="top">今日收入</view>
+      <view class="center">
+        <view class="left">0</view>
+        <van-button wx:if="{{!getBindBankCardInfo.auditStatus}}" bindtap="toBkPage" data-type="bangKa" class="right"
+          round plain color="#f9b52d" icon="../../image/fonts/iconka.png" type="primary">绑卡 </van-button>
+        <van-button wx:elif="{{getBindBankCardInfo.auditStatus === 'P'}}" bindtap="toBkPage" data-type="shenHeZhong"
+          class="right" round plain color="#f9b52d" icon="../../image/fonts/iconka.png" type="primary">审核中</van-button>
+        <van-button wx:elif="{{getBindBankCardInfo.auditStatus === 'F'}}" bindtap="toBkPage" data-type="shenHeShiBai"
+          class="right" round plain color="#f9b52d" icon="../../image/fonts/iconka.png" type="primary">审核失败</van-button>
+        <van-button wx:elif="{{getBindBankCardInfo.auditStatus === 'S' && getBindBankCardInfo.signStatus === '0'}}"
+          bindtap="toBkPage" data-type="daiQianXiYi" class="right" round plain color="#f9b52d"
+          icon="../../image/fonts/iconka.png" type="primary">待签协议</van-button>
+        <van-button wx:elif="{{getBindBankCardInfo.auditStatus === 'S' && getBindBankCardInfo.signStatus === '1'}}"
+          bindtap="toBkPage" data-type="qianShuZhong" class="right" round plain color="#f9b52d"
+          icon="../../image/fonts/iconka.png" type="primary">签署中</van-button>
+      </view>
+      <view class="bottom">
+        <view class="left">单位\元</view>
+        <view class="right">
+          <van-icon class="inBlock" size="18px" name="../../image/fonts/icontanhao.png" />
+          <text style="margin-left: 15rpx">绑定银行卡才能收款</text></view>
+      </view>
+    </view>
+
+    <view class="card2" wx:else>
+      <view class="top">
+        <view class="left">
+          <view class="leftKa">
+            <van-icon size="42rpx" name="../../image/fonts/iconka.png"/>
+          </view>
+          <view style="margin-left: 20rpx">
+            <view>{{getBindBankCardInfo.bankName||''}}工商银行</view>
+            <view style="font-size: 22rpx">借记卡</view>
+          </view>
+        </view>
+
+        <view>{{getBindBankCardInfo.bankCardNum||''}}</view>
+      </view>
+
+      <view class="center">
+        <text>{{moneys}}</text>
+      </view>
+      <view class="bottom">
+        <view class="right" bindtap="classifyTap">
+          <text class="classify">{{classify}}</text>
+          <van-icon name="arrow-down" />
+        </view>
+        <view>单位\元</view>
+      </view>
+    </view>
+
+
+
+  </view>
+  <van-cell size="large" is-link bind:click="goToURL" data-url="/pages/myOrders/myOrders">
+    <view slot="icon" style="height:24px">
+      <van-icon size="24px" name="../../image/fonts/iconzhangdan.png" />
+    </view>
+    <view slot="title">
+      <view class="van-cell-text">
+        <text>我的账单</text>
+      </view>
+    </view>
+  </van-cell>
+
+  <van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelect" />
+</view>

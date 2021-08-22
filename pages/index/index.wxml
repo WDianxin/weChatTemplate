@@ -1,0 +1,21 @@
+<!--pages/index/index.wxml 首页-->
+<navBar></navBar>
+<image class="bagImag" src="../../image/indexTopBackg.png" mode="scaleToFill"></image>
+<view class="title">
+  考试报名查询
+</view>
+<view class="butBox">
+    <view class="but" bindtap="toPage" data-id="search">
+      <icon class="icon-box-img" type="search" color="#fff" size="30"></icon>
+      <span class="bt">指定考试查询</span>
+      <span class="jt"> > </span>
+    </view>
+    <view class="but" bindtap="toPage" data-id="download">
+      <icon class="icon-box-img" type="download" color="#fff" size="30"></icon>
+      <span class="bt">考试证书下载</span>
+      <span class="jt"> > </span>
+    </view>
+
+  
+</view>
+<van-icon name="arrow-up" size="26" class='goTop' wx:if='{{floorstatus}}' color="#6299E2" bindtap="goTop" />

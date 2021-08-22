@@ -1,0 +1,59 @@
+<!--pages/identityStaffReg/identityStaffReg.wxml注册和认证模块(员工和个人基本信息)-->
+<navBar  back navigationBarTitle="{{submitType == 1||submitType == 2?'认证':'注册'}}"></navBar>
+<View class="container identityStaffRegBox">
+  <import src="../../template/registerSteps/registerSteps.wxml" />
+  <template  wx:if="{{ submitType != 1&&submitType != 2?true:false}}"  is="steps" data="{{active2:true}}"></template>
+  <!-- <template wx:if="{{ submitType != 1||submitType != 2?false:true}}" is="steps" data="{{active2:true}}"></template> -->
+  <view style="width:100%;height:10rpx;background-color: #F7F7F7;"></view>
+
+  <van-cell-group wx:if="{{kind === 'yuanGong'}}">
+    <van-field model:value="{{ companyName }}" label="公司名称" placeholder="请选择公司名称" icon="arrow" bindtap="bindCompany"
+      readonly required />
+  </van-cell-group>
+  <view wx:if="{{kind === 'yuanGong'}}" style="width:100%;height:20rpx;background-color: #F7F7F7;"></view>
+  <van-cell-group>
+    <van-field model:value="{{ userName }}" label="姓名" placeholder="请输入姓名" clearable required />
+  </van-cell-group>
+  <van-cell-group>
+    <van-field model:value="{{ gender }}" readonly label="性别" placeholder="请选择性别" icon="arrow" bindtap="genderShow"
+      required />
+  </van-cell-group>
+  <van-cell-group>
+    <van-field model:value="{{ region == 'null'?'':region}}" readonly label="城市" placeholder="请选择城市" icon="arrow"
+      bindtap="regionShow" required />
+  </van-cell-group>
+  <view style="width:100%;height:20rpx;background-color: #F7F7F7;"></view>
+  <van-cell-group>
+    <van-field model:value="{{ identityNum }}" label="身份证号" placeholder="请输入身份证号" clearable required />
+  </van-cell-group>
+  <van-cell-group border="{{ false }}">
+    <van-field label="证件照片" readonly required border="{{ false }}" />
+  </van-cell-group>
+  <view class="idImgBox">
+    <view class="imgLeft">
+      <image src="{{certificatePic?certificatePic:'../../image/zhengJian1.png'}}" bindtap="showImg" data-type="zheng">
+      </image>
+      <view class="but" bindtap="upload" data-type="zheng">上传身份证正面</view>
+    </view>
+    <view class="imgRegit">
+      <image src="{{certificatePic2?certificatePic2:'../../image/zhengJian2.png'}}" bindtap="showImg" data-type="fan">
+      </image>
+      <view class="but" bindtap="upload" data-type="fan">上传身份证反面</view>
+    </view>
+  </view>
+  <view class="remark">
+    <text class="ts">提示:</text>
+    身份证图片仅用于服务兵身份认证和入驻使用，请保持照片<text class="zt">字迹清晰，内容完整</text>
+  </view>
+  <view class='submit-wrapper'>
+    <button class='submit-btn'
+      disabled="{{userName&&gender&&region&&certificatePic&&certificatePic2&&identityNum&&(kind === 'yuanGong'?companyName:true)?false:true}}"
+      bindtap='nextPage2'>下一步</button>
+  </view>
+  <!-- 性别选择 -->
+  <van-action-sheet show="{{ genderShow }}" actions="{{ actions }}" bind:close="genderOnClose"
+    bind:select="genderOnSelect" />
+  <!-- 地区 -->
+  <regionBut id="region" wx:if="{{regionShow}}" regionShow="{{regionShow}}" bindloadList="loadList"></regionBut>
+
+</View>

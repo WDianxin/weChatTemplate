@@ -1,0 +1,13 @@
+<!--template/registerSteps/registerSteps.wxml 注册页面顶部进度条-->
+<template name="steps">
+  <view class="registerStepsBox">
+    <text class="{{active1?'active':''}}">{{titleData[0]||'账号信息'}}</text>
+    <van-icon name="arrow" color="#E1E1E1" size="20px"  class="{{threeHide?'lef10':''}}" />
+    <van-icon  size="20px" color="#E1E1E1" custom-class="icon" name="arrow"  />
+    <text class="{{active2?'active':''}}">{{titleData[1]||'基本信息'}}</text>
+    <van-icon wx:if="{{!threeHide?true:false}}" size="20px" color="#E1E1E1" name="arrow" />
+    <van-icon wx:if="{{!threeHide?true:false}}"  size="20px" color="#E1E1E1" custom-class="icon"
+      name="arrow" />
+    <text wx:if="{{!threeHide?true:false}}" class="{{active3?'active':''}}">{{titleData[2]||'提交成功'}}</text>
+  </view>
+</template>

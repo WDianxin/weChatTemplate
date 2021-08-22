@@ -1,0 +1,73 @@
+<!--pages/listOrderDetailsS/listOrderDetailsS.wxml  订单列表详情(三翼鸟)-->
+
+<navBar back navigationBarTitle="订单详情"></navBar>
+<view class="container listOrdersDetails">
+  <view class="topBox">
+    <van-icon name="../../image/sanYiNiao.png" size="50px" />
+    <text class="title">订单收款</text>
+    <text class="money"> +{{dataObj.factPrice}}</text>
+  </view>
+  <view class="listBox">
+
+    <van-cell-group border="{{ false }}">
+      <van-field input-align="left" model:value="{{ dataObj.orderNum }}" label=" 订单号:" placeholder="" readonly
+        title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-field input-align="left" model:value="{{ dataObj.ecologyThirdOrder.createTime }}" label="派单时间:"
+        placeholder="" readonly title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-field input-align="left" model:value="{{ dataObj.ecologyThirdOrder.customerName }}" label="客户姓名:"
+        placeholder="" readonly title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-field input-align="left" model:value="{{ dataObj.ecologyThirdOrder.customerPhone }}" label="联系电话:"
+        placeholder="" readonly title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <!-- 线下收款 -->
+    <van-cell-group border="{{ false }}" wx:if="{{dataObj.orderStatus === 1}}">
+      <van-field input-align="left" model:value="{{ dataObj.ecologyThirdOrder.finishTime }}" label="付款时间:"
+        placeholder="" readonly title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <!-- 非线下收款 -->
+    <van-cell-group border="{{ false }}" wx:elif="{{dataObj.orderStatus != 2}}">
+      <van-field input-align="left" model:value="{{ dataObj.finishTime }}" label="付款时间:"
+        placeholder="" readonly title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-cell border="{{ false }}" title-width="{{titleWidth}}" title="客户地址:"
+        model:value="{{ dataObj.ecologyThirdOrder.customerAddress }}" title-class="titleBox" value-class="valueBox" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}">
+      <van-cell border="{{ false }}" title-width="{{titleWidth}}" title="服务类型："
+        model:value="{{ dataObj.ecologyThirdOrder.wareName || '' }}" title-class="titleBox" value-class="valueBox" />
+    </van-cell-group>
+    <van-cell-group border="{{ false }}" wx:if="{{dataObj.orderStatus}}">
+      <van-field input-align="left" model:value="{{ dataObj.orderStatusName }}" label="订单状态：" placeholder="" readonly
+        title-width="{{titleWidth}}" border="{{ false }}" />
+    </van-cell-group>
+    <view wx:if="{{!dataObj.orderStatus}}">
+      <van-cell-group border="{{ false }}">
+        <van-cell border="{{ false }}" title-width="{{titleWidth}}" title="备注:" model:value="{{ dataObj.remarks }}"
+          title-class="titleBox" value-class="valueBox" />
+      </van-cell-group>
+
+      <van-cell-group border="{{ false }}">
+        <van-field input-align="left" model:value="{{ dataObj.standardPrice }}" label="标准报价：" placeholder="" readonly
+          title-width="{{titleWidth}}" border="{{ false }}" />
+      </van-cell-group>
+      <van-cell-group border="{{ false }}">
+        <van-field input-align="left" model:value="{{ dataObj.factPrice }}" label="实收金额：" placeholder="" readonly
+          title-width="{{titleWidth}}" border="{{ false }}" />
+      </van-cell-group>
+    </view>
+
+  </view>
+  <view class="guiGe" wx:for="{{dataObj.thirdOrderDetails}}">
+    <text class="name">{{item.wareName}}</text>
+    <text class="num">X{{item.number}}</text>
+    <text class="mony">{{item.totalPrice}}元</text>
+  </view>
+
+</view>

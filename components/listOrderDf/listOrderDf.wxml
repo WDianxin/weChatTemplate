@@ -1,0 +1,22 @@
+<!--components/listOrderDf/listOrderDf.wxml我的订单待服务-->
+<view style="height: 100%;">
+  <scroll-view scroll-y style="width: 100%; height: auto;min-height:{{pHeight}};-webkit-overflow-scrolling: touch;"
+    refresher-enabled="{{refresherEnabled}}" refresher-threshold="{{100}}" refresher-default-style="white"
+    refresher-background="#ccc" refresher-triggered="{{triggered}}" bindrefresherpulling="onPulling"
+    bindrefresherrefresh="onRefresh" scroll-top="{{scrollTop}}" bindrefresherrestore="onRestore"
+    bindrefresherabort="onAbort" bindscrolltolower="loadMore" bindscroll="scrollFn">
+    <view class="scrollContent" style="min-height: {{pHeight}}">
+      <import src="../../template/gtList2/gtList2.wxml" />
+      <view wx:if="{{listArr.length === 0?true:false}}" class="titleRemark nullText">
+        暂无数据
+      </view>
+      <view class="list" wx:for="{{listArr}}" wx:for-item="items">
+        <view>
+          <view>
+            <template is="gtList2" data="{{items}}"></template>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

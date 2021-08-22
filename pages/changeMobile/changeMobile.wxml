@@ -1,0 +1,12 @@
+<!--pages/changeMobile/changeMobile.wxml 换绑手机号-->
+<navBar back navigationBarTitle='换绑手机号'></navBar>
+<view class="container">
+  <view class="content">
+    <van-cell-group>
+      <van-field model:value="{{ mobile }}" clearable left-icon="../../image/fonts/mobile.png" label="" clearable placeholder="请输入新手机号"  />
+    </van-cell-group>
+  </view>
+  <view class='submit-wrapper'>
+    <button class='submit-btn' disabled="{{mobile?false:true}}" bindtap='nextPage'>完 成</button>
+  </view>
+</view>

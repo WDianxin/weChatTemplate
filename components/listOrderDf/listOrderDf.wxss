@@ -1,0 +1,5 @@
+/* components/listOrderDf/listOrderDf.wxss */
+@import "../../pages/listOrders/listOrders.wxss";
+.timeF {
+  color: #FFBF2E!important;
+}

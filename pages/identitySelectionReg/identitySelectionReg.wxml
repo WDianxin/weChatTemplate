@@ -1,0 +1,40 @@
+<!--pages/identitySelectionReg/identitySelectionReg.wxml注册模块(身份选择)-->
+<navBar back navigationBarTitle='身份选择'></navBar>
+<View class="container identitySelectionRegBox">
+  <View class="listBox" bindtap="register" data-type="geRen">
+    <view class="imgbox">
+      <image src="../../image/geRenJingYing.png" class="image" />
+    </view>
+    <view class="content">
+      <view class="title">我是个人经营者（没有营业执照）</view>
+      <view class="remark">填写个人身份和资质证书，审核后完成入驻</view>
+    </view>
+    <view class="netImgBox">
+      <van-icon name="arrow" size="20px" color="#bbbbbb" />
+    </view>
+  </View>
+  <View class="listBox" bindtap="register" data-type="shangHu">
+    <view class="imgbox">
+      <image src="../../image/geTiGongShang.png" class="image" />
+    </view>
+    <view class="content">
+      <view class="title">我是个体工商户（有营业执照）</view>
+      <view class="remark">填写个体工商户营业执照信息，审核后完成入驻</view>
+    </view>
+    <view class="netImgBox">
+      <van-icon name="arrow" size="20px" color="#bbbbbb" />
+    </view>
+  </View>
+  <View class="listBox staff" bindtap="register" data-type="yuanGong">
+    <view class="imgbox">
+      <image src="../../image/qiYeYuangong.png" class="image" />
+    </view>
+    <view class="content">
+      <view class="title">我是企业员工（企业为海尔生态合作商）</view>
+      <view class="remark">填写公司信息，审核后完成入驻</view>
+    </view>
+    <view class="netImgBox">
+      <van-icon name="arrow" size="20px" color="#bbbbbb" />
+    </view>
+  </View>
+</View>

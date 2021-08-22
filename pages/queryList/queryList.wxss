@@ -1,0 +1,2 @@
+/* pages/queryList/queryList.wxss */
+@import "../../template/gtList2/gtList2.wxss";

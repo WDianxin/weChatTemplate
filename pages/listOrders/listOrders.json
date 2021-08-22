@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "navBar": "/components/navbar/navbar",
+    "listOrderDg": "/components/listOrderDg/listOrderDg",
+    "listOrderDf": "/components/listOrderDf/listOrderDf",
+    "listOrderYw": "/components/listOrderYw/listOrderYw"
+  }
+}

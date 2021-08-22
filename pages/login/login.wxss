@@ -1,0 +1,111 @@
+/* pages/login/login.wxss */
+page{
+  background-color: #ffffff;
+}
+.container {
+  width: 100%;
+  padding-top: 140rpx;
+  padding: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 180rpx;
+}
+
+.content{
+  width: 80%;
+}
+.phone-wrapper {
+  flex-grow: 1;
+  margin-left: 22rpx;
+  margin-top: 11rpx;
+  width: 100%;
+}
+
+.phone-box {
+  display: flex;
+  justify-content: space-between;
+  /* padding-bottom: 20rpx; */
+  padding-top: 15rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: left;
+  /* margin-top: 30rpx; */
+  margin-top: 60rpx;
+  border: 1px solid rgba(187, 187, 187, 100);
+}
+
+.icon-color {
+  margin-left: 30rpx;
+  line-height: 63rpx!important;
+}
+.content-wrapper .r30{
+ margin-right: 30rpx;
+}
+
+
+
+.logo_txt {
+  color: #666666;
+  font-size: 54rpx;
+  font-family: "微软雅黑";
+  padding-bottom: 20rpx;
+}
+
+.phone-placeholder {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.phone-text {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.submit-wrapper {
+  margin: 30rpx auto 0;
+}
+
+
+.registration{
+  margin-top: 40rpx;
+  font-size: 30rpx;
+  text-align: right;
+  padding-right: 20rpx;
+  line-height: 50rpx;
+  color: #1989fa ;
+}
+.loginBox .other{
+  width: 90%;
+  text-align: center;
+}
+.loginBox .other text{
+color: #767676 ;
+font-size: 28rpx;
+line-height: 100rpx;
+text-align: center;
+}
+.loginBox .other .shu{
+  padding: 0 40rpx;
+}
+.submit-btn {
+  width: 100%;
+}
+
+
+.codeImg .img{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  display: inline-block;
+  width: 236rpx;
+  height: 80rpx;
+  object-fit: contain;
+  border: 1rpx solid #1989fa;
+  border-radius: 10rpx;
+  float: right;
+
+}

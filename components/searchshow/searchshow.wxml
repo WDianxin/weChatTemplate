@@ -1,0 +1,12 @@
+<!--components/region/region.wxml 地区选择-->
+
+<van-popup show="{{ searchShow }}"  position="bottom"    round="true"
+    bind:close="onClose" >
+    <van-picker catchtouchmove="return"
+      show-toolbar
+      title="地区选择"
+      columns="{{ columns }}"
+      bind:cancel="onCancel"
+      bind:confirm="onConfirm"
+    />
+  </van-popup>

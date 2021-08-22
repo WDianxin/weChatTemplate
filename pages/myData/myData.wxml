@@ -1,0 +1,45 @@
+<!--pages/myData/myData.wxml 我的资料-->
+<navBar back navigationBarTitle="我的资料"></navBar>
+<view class="container myData">
+  <van-cell title="个人头像" is-link size="large" bindtap="upload">
+    <view class="userImg">
+      <image src="{{avatar}}" />
+    </view>
+  </van-cell>
+
+  <!-- <van-field model:value="{{ name }}" label="姓名" placeholder="{{isReadonly?'':'请输入姓名'}}" size="large" clearable  right-icon="{{!isReadonly?'edit':''}}"
+    input-align="right" readonly="{{isReadonly}}" />
+
+  <van-field model:value="{{ sex }}" label="性别" placeholder="{{isReadonly?'':'请选择性别'}}" size="large"
+    bindtap="genderShow" readonly clearable input-align="right"  right-icon="{{!isReadonly?'arrow':''}}"/>
+
+  <van-field model:value="{{ region }}" label="城市" placeholder="{{isReadonly?'':'请输入城市'}}" size="large"
+    bindtap="regionShow" readonly clearable input-align="right"  right-icon="{{!isReadonly?'arrow':''}}"/> -->
+  <van-field model:value="{{ name }}" label="姓名"  size="large" clearable
+    input-align="right" readonly />
+
+  <van-field model:value="{{ sex }}" label="性别"  size="large" readonly clearable
+    input-align="right" />
+
+  <van-field model:value="{{ region }}" label="城市"  size="large" readonly
+    clearable input-align="right" />
+  <van-field model:value="{{ mobile }}" label="联系方式"  size="large" clearable
+  readonly input-align="right"  />
+  <!-- <van-field wx:if="{{identity === 3}}" model:value="{{ companyName }}" label="公司名称" placeholder="{{isReadonly?'':'请选择公司'}}" bindtap="goToURL"  right-icon="{{!isReadonly?'arrow':''}}"
+    readonly clearable input-align="right" data-url="../companySelect/companySelect" size="large">
+  </van-field>   -->
+  <van-field wx:if="{{identity === 3}}" model:value="{{ companyName }}" label="公司名称"
+    placeholder="{{isReadonly?'':'请选择公司'}}" readonly clearable input-align="right"
+    data-url="../companySelect/companySelect" size="large">
+  </van-field>
+  <!-- <view class='submit-wrapper'>
+    <button wx:if="{{isReadonly}}" class='submit-btn' bindtap='bindEdit'>修 改</button>
+    <button wx:if="{{!isReadonly}}" class='submit-btn' bindtap='bindSubmit'>保 存</button>
+  </view> -->
+
+  <!-- 性别选择 -->
+  <van-action-sheet show="{{ genderShow }}" actions="{{ actions }}" bind:close="genderOnClose"
+    bind:select="genderOnSelect" />
+  <!-- 地区 -->
+  <regionBut id="region" wx:if="{{regionShow}}" regionShow="{{regionShow}}" bindloadList="loadList"></regionBut>
+</view>

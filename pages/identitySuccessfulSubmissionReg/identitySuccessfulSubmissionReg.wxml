@@ -1,0 +1,28 @@
+<!--pages/identitySuccessfulSubmissionReg/identitySuccessfulSubmissionReg.wxml注册模块(已提交审核页面)-->
+<navBar back navigationBarTitle="{{submitType == 1||submitType == 2?'认证':'注册'}}"></navBar>
+<View class="container">
+  <import src="../../template/registerSteps/registerSteps.wxml" />
+  <template wx:if="{{ brackUrl === 'my'||submitType == 1 || submitType == 2?false:true}}" is="steps"
+    data="{{active3:true}}"></template>
+  <view class="border"></view>
+  <view wx:if="{{regFail}}" class="contern">
+    <image src="../../image/shiBai.png"></image>
+    <text class="yt">认证失败</text>
+    <text class="ts">失败原因:{{checkOpinion||''}}</text>
+    <text class="zdl" bindtap="gotIt">重新认证</text>
+  </view>
+  <view wx:elif="{{!sucessBool}}" class="contern">
+    <image src="../../image/yiTiJiaoShenHe.png"></image>
+    <text class="yt">已提交审核</text>
+    <text class="ts">您的申请已提交，我们需要1-3的工作日审核请耐心等待</text>
+    <view class="zdl" bindtap="gotIt">我知道了</view>
+  </view>
+  <view wx:else class="contern">
+    <image src="../../image/renZhengChengGong.png"></image>
+    <text class="yt">认证成功</text>
+    <text wx:if="{{kind === 'geRen'}}" class="ts">您已通过服务平台个人商家认证</text>
+    <text wx:if="{{kind === 'shangHu'}}" class="ts">您已通过服务平台个体工商户商家认证</text>
+    <text wx:if="{{kind === 'yuanGong'}}" class="ts">您已通过服务平台企业员工商家认证</text>
+    <text class="zdl" bindtap="gotIt">我知道了</text>
+  </view>
+</View>
